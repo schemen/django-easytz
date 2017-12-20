@@ -20,7 +20,7 @@ class TimezoneStore(models.Model):
     """
     Database storage for a users timezone
     """
-    user = models.OneToOneField(User, related_name='timezone')
+    user = models.OneToOneField(User, related_name='timezone', on_delete=models.CASCADE)
 
     # current max length of a tz is 30, going with 48 to be safe
     timezone = models.CharField(max_length=48, default=get_default_timezone)
