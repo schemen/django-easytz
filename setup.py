@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'django-easytz',
-    version = '0.3',
+    version = '0.4',
     description = 'Timezone localization without any thinking or doing whatsoever.',
     long_description = open('README.md').read(),
     author = 'James Friedman',
