@@ -6,7 +6,10 @@ from .models import TimezoneStore
 
 class TimezonesMiddleware(object):
 
-    def process_request(self, request):
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
         """
         Attempts to activate a timezone from a cookie or session
         """
