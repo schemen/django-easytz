@@ -13,7 +13,7 @@ class TimezonesMiddleware(object):
         """
         Attempts to activate a timezone from a cookie or session
         """
-        response = self.get_response()
+        response = self.get_response(request)
         if getattr(settings, 'USE_TZ'):
             # check the cookie and the session
             tz = request.COOKIES.get('timezone')
