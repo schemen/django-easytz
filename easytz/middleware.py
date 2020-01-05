@@ -31,7 +31,7 @@ class TimezonesMiddleware(object):
                     request.user._timezone = tz
 
                     # check to see if the session needs to be updated
-                    if request.user.is_authenticated() and session_tz != tz:
+                    if request.user.is_authenticated and session_tz != tz:
                         request.session['timezone'] = tz
                         request.session.save()
 
